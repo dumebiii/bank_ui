@@ -111,12 +111,13 @@ class _BankMainState extends State<BankMain> {
   static int bal = 100;
   String balance = bal.toString();
 
-  onToggle(bool valuee) {
-    setState(() {
-      isTouched = valuee;
-      balance = '****';
-    });
-  }
+  // onToggle(bool valuee) {
+  //   setState(() {
+  //     isTouched = valuee;
+
+  //     balance = '****';
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -192,7 +193,7 @@ class _BankMainState extends State<BankMain> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text('\$ $balance',
+                            Text(isTouched ? '\$****' : '\$ $balance',
                                 style: GoogleFonts.roboto(
                                     textStyle: const TextStyle(
                                         color: Color(0xff0050E2),
@@ -202,8 +203,10 @@ class _BankMainState extends State<BankMain> {
                               activeTrackColor: const Color(0xff0050E2),
                               activeColor: Colors.white,
                               value: isTouched,
-                              onChanged: (valuee) {
-                                onToggle(valuee);
+                              onChanged: (value) {
+                                setState(() {
+                                  isTouched = value;
+                                });
                               },
                             ),
                           ],
