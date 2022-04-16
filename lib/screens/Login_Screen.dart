@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff161E35),
+      backgroundColor: const Color(0xff161E35),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -26,38 +27,39 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text(
                   'Log In',
                   style: GoogleFonts.inter(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                           fontSize: 40)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 40,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
                     cursorHeight: 20,
-                    style: TextStyle(fontSize: 22),
+                    style: const TextStyle(fontSize: 22),
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         filled: true,
-                        hintStyle: TextStyle(fontSize: 20, color: Colors.grey),
+                        hintStyle:
+                            const TextStyle(fontSize: 20, color: Colors.grey),
                         hintText: "Email",
                         fillColor: Colors.white70)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: TextField(
                     cursorHeight: 20,
-                    style: TextStyle(fontSize: 22),
+                    style: const TextStyle(fontSize: 22),
                     enableSuggestions: false,
                     autocorrect: false,
                     keyboardType: TextInputType.visiblePassword,
@@ -66,11 +68,13 @@ class _LoginScreenState extends State<LoginScreen> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        contentPadding: EdgeInsets.all(8),
+                        contentPadding: const EdgeInsets.all(8),
                         suffix: TextButton(
                             child: _passwordVisible
-                                ? Text('Show', style: TextStyle(fontSize: 20))
-                                : Text('Hide', style: TextStyle(fontSize: 20)),
+                                ? const Text('Show',
+                                    style: TextStyle(fontSize: 20))
+                                : const Text('Hide',
+                                    style: TextStyle(fontSize: 20)),
                             onPressed: () {
                               setState(() {
                                 _passwordVisible = !_passwordVisible;
@@ -98,14 +102,15 @@ class _LoginScreenState extends State<LoginScreen> {
                                   remember = value!;
                                 });
                               },
-                              activeColor:
-                                  remember ? Colors.white : Color(0xff161E35),
+                              activeColor: remember
+                                  ? Colors.white
+                                  : const Color(0xff161E35),
                               value: remember, //  <-- leading Checkbox
                             ),
                             Text(
                               'Remember login',
                               style: GoogleFonts.inter(
-                                  textStyle: TextStyle(
+                                  textStyle: const TextStyle(
                                       color: Color(0xffCCCCCC),
                                       fontWeight: FontWeight.w400,
                                       fontSize: 19)),
@@ -119,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Text(
                         'Login with fingerprints',
                         style: GoogleFonts.inter(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                                 color: Color(0xffCCCCCC),
                                 fontWeight: FontWeight.w400,
                                 fontSize: 19)),
@@ -132,12 +137,12 @@ class _LoginScreenState extends State<LoginScreen> {
               RichText(
                 text: TextSpan(
                     text: 'Don\'t have an account?',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: const TextStyle(color: Colors.white, fontSize: 18),
                     children: <TextSpan>[
                       TextSpan(
                           text: ' Sign up',
-                          style:
-                              TextStyle(color: Colors.blueAccent, fontSize: 18),
+                          style: const TextStyle(
+                              color: Colors.blueAccent, fontSize: 18),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {
                               // navigate to desired screen
@@ -153,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 97.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: Color(0xff3071E7),
+                      color: const Color(0xff3071E7),
                       borderRadius: BorderRadius.circular(25)),
                   child: TextButton(
                     onPressed: () {},
@@ -175,7 +180,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () {},
                 child: Text('Forgot your password?',
                     style: GoogleFonts.inter(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: Color(0xffCCCCCC),
                             fontWeight: FontWeight.w400,
                             fontSize: 19))),

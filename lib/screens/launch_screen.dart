@@ -65,7 +65,7 @@ class _LaunchState extends State<Launch> {
                                     style: TextStyle(
                                       fontSize: 35.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xff3071E7),
+                                      color: const Color(0xff3071E7),
                                     ),
                                   ),
                                 ),
@@ -88,7 +88,7 @@ class _LaunchState extends State<Launch> {
                                     style: TextStyle(
                                       fontSize: 35.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: Color(0xff3071E7),
+                                      color: const Color(0xff3071E7),
                                     ),
                                   ),
                                 ),

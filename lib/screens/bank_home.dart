@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:bank_ui/screens/card_screen.dart';
 import 'package:bank_ui/screens/profile_screen.dart';
 import 'package:bank_ui/screens/wallet_screen.dart';
@@ -7,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BankHome extends StatefulWidget {
   const BankHome({Key? key}) : super(key: key);
@@ -51,10 +48,10 @@ class _BankHomeState extends State<BankHome> {
           height: 70,
           width: double.infinity,
           decoration: const BoxDecoration(
-              color: const Color(0xff03040E),
+              color: Color(0xff03040E),
               borderRadius: BorderRadius.only(
-                topRight: const Radius.circular(30.0),
-                topLeft: const Radius.circular(30.0),
+                topRight: Radius.circular(30.0),
+                topLeft: Radius.circular(30.0),
               )),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -202,7 +199,7 @@ class _BankMainState extends State<BankMain> {
                                         fontWeight: FontWeight.w400,
                                         fontSize: 30))),
                             Switch(
-                              activeTrackColor: Color(0xff0050E2),
+                              activeTrackColor: const Color(0xff0050E2),
                               activeColor: Colors.white,
                               value: isTouched,
                               onChanged: (valuee) {

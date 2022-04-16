@@ -26,11 +26,11 @@ class _WalletScreenState extends State<WalletScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff161E35),
+        backgroundColor: const Color(0xff161E35),
         appBar: AppBar(
-            backgroundColor: Color(0xff161E35),
+            backgroundColor: const Color(0xff161E35),
             leading: IconButton(
-              icon: FaIcon(Icons.arrow_back_ios_new_rounded),
+              icon: const FaIcon(Icons.arrow_back_ios_new_rounded),
               onPressed: () {},
             ),
             actions: [
@@ -44,176 +44,206 @@ class _WalletScreenState extends State<WalletScreen> {
                         color: Colors.white,
                         fontWeight: FontWeight.w400,
                         fontSize: 31)))),
-        body: Column(children: [
-          Container(
-            color: const Color(0xff080C25),
-            height: 160,
-            width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 25,
-                left: 30,
-                right: 30,
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Container(
+              color: const Color(0xff080C25),
+              height: 160,
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 25,
+                  left: 30,
+                  right: 30,
+                ),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Balance',
+                          style: GoogleFonts.roboto(
+                              textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 25))),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('\$ $balance',
+                              style: GoogleFonts.roboto(
+                                  textStyle: const TextStyle(
+                                      color: Color(0xff0050E2),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 30))),
+                          Switch(
+                            activeTrackColor: const Color(0xff0050E2),
+                            activeColor: Colors.white,
+                            value: isTouched,
+                            onChanged: (valuee) {
+                              onToggle(valuee);
+                            },
+                          ),
+                        ],
+                      ),
+                    ]),
               ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Balance',
-                        style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 25))),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('\$ $balance',
-                            style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                    color: Color(0xff0050E2),
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 30))),
-                        Switch(
-                          activeTrackColor: Color(0xff0050E2),
-                          activeColor: Colors.white,
-                          value: isTouched,
-                          onChanged: (valuee) {
-                            onToggle(valuee);
-                          },
+                children: [
+                  ButtonBarSuper(
+                    //  wrapType: wrapType,
+                    //  wrapFit: wrapFit,
+                    spacing: 5.0, // Horizontal spacing between buttons.
+                    lineSpacing: 10.0, // Vertical spacing between button lines.
+                    buttonHeight: 48,
+                    buttonMinWidth: 90,
+                    children: [
+                      Container(
+                        height: 107.h,
+                        width: 70.w,
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            border: Border.all(
+                              color: const Color(0xff3071E7),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(25)),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Select Range',
+                            style: TextStyle(
+                              fontSize: 35.sp,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xff3071E7),
+                            ),
+                          ),
                         ),
-                      ],
+                      ),
+                      Container(
+                        height: 107.h,
+                        width: 70.w,
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            border: Border.all(
+                              color: const Color(0xff3071E7),
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(25)),
+                        child: TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Email Statement ',
+                            style: TextStyle(
+                              fontSize: 35.sp,
+                              fontWeight: FontWeight.w600,
+                              color: const Color(0xff3071E7),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextField(
+                      cursorHeight: 35,
+                      style: const TextStyle(fontSize: 22),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(35),
+                          ),
+                          filled: true,
+                          hintStyle: const TextStyle(
+                              fontSize: 24, color: Color(0xffBDBDBD)),
+                          hintText: "Search",
+                          fillColor: const Color(0xffF6F6F6))),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Column(children: const [
+                    TranCon(
+                      money: '\$20',
+                    ),
+                    TranCon(
+                      money: '\$15',
+                    ),
+                    TranCon(
+                      money: '\$100',
                     ),
                   ]),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          ButtonBarSuper(
-            //  wrapType: wrapType,
-            //  wrapFit: wrapFit,
-            spacing: 2.0, // Horizontal spacing between buttons.
-            lineSpacing: 10.0, // Vertical spacing between button lines.
-            buttonHeight: 48,
-            buttonMinWidth: 20,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 92.w),
-                child: Container(
-                  height: 97.h,
-                  width: 20.w,
-                  decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      border: Border.all(
-                        color: Color(0xff3071E7),
-                        width: 0,
-                      ),
-                      borderRadius: BorderRadius.circular(25)),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Select Range ',
-                      style: TextStyle(
-                        fontSize: 35.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff3071E7),
-                      ),
-                    ),
-                  ),
-                ),
+                ],
               ),
-              Padding(
-                padding: EdgeInsets.only(right: 92.w),
-                child: Container(
-                  height: 97.h,
-                  width: 20.w,
-                  decoration: BoxDecoration(
-                      color: Colors.transparent,
-                      border: Border.all(
-                        color: Color(0xff3071E7),
-                        width: 0,
-                      ),
-                      borderRadius: BorderRadius.circular(25)),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Email Statement ',
-                      style: TextStyle(
-                        fontSize: 35.sp,
-                        fontWeight: FontWeight.w600,
-                        color: Color(0xff3071E7),
-                      ),
-                    ),
-                  ),
-                ),
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: TextField(
-                cursorHeight: 20,
-                style: TextStyle(fontSize: 22),
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    filled: true,
-                    hintStyle:
-                        TextStyle(fontSize: 20, color: Color(0xffBDBDBD)),
-                    hintText: "Search",
-                    fillColor: Color(0xffF6F6F6))),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Container(
-              margin: EdgeInsets.symmetric(horizontal: 10),
-              child: Column(children: [
-                TranCon(),
-                TranCon(),
-                TranCon(),
-              ])),
-        ]));
+            ),
+          ]),
+        ));
   }
 }
 
 class TranCon extends StatelessWidget {
+  final String money;
   const TranCon({
     Key? key,
+    required this.money,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(30),
-      height: 100,
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      height: 80,
       decoration: BoxDecoration(
-          color: Color(0xffD3D3D3), borderRadius: BorderRadius.circular(10)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [Text('16/10/2022'), Text('13:10')],
-              ),
-              const Text('\$100'),
-            ],
-          ),
-          Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor')
-        ],
+          color: const Color(0xffD3D3D3),
+          borderRadius: BorderRadius.circular(10)),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(left: 30.0, right: 30, bottom: 20, top: 5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    Text(
+                      '16/10/2022',
+                      style:
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
+                    ),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Text('13:10',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400, fontSize: 17))
+                  ],
+                ),
+                Text(
+                  money,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 17),
+                ),
+              ],
+            ),
+            const Text(
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+class $money {}
