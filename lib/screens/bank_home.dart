@@ -241,27 +241,24 @@ class _BankMainState extends State<BankMain> {
                 height: 25,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   FinanceCon(
                     title: 'images/finance/transfer.png',
                     firsttitle: 'Tranfer',
                     secondtitle: '',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/finance/m_check.png',
                     firsttitle: 'Foriegn',
                     secondtitle: 'Transfer',
                     // Secondtitle: 'Transfer',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/finance/loan.png',
                     firsttitle: 'Loan and',
                     secondtitle: 'Investment',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/finance/more.png',
                     firsttitle: 'More',
@@ -284,26 +281,23 @@ class _BankMainState extends State<BankMain> {
                 height: 25,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   FinanceCon(
                     title: 'images/Bill/globe.png',
                     firsttitle: 'Internet',
                     secondtitle: 'Services',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/Bill/Vector.png',
                     firsttitle: 'Electricity',
                     secondtitle: '',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/Bill/movie.png',
                     firsttitle: 'Betting',
                     secondtitle: '',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/Bill/tevee.png',
                     firsttitle: 'Cable Tv',
@@ -315,27 +309,24 @@ class _BankMainState extends State<BankMain> {
                 height: 15,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
                   FinanceCon(
                     title: 'images/Bill/travel.png',
                     firsttitle: 'Travels and',
                     secondtitle: 'Hotel',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/Bill/Tax.png',
                     firsttitle: 'Tax',
                     secondtitle: '',
                     // Secondtitle: 'Transfer',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/Bill/TopUp.png',
                     firsttitle: 'Mobile',
                     secondtitle: 'Top up',
                   ),
-                  SizedBox(width: 15),
                   FinanceCon(
                     title: 'images/finance/more.png',
                     firsttitle: 'More',
