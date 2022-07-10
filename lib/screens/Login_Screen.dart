@@ -94,6 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                       Container(
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Checkbox(
                               // value: checkedValue,

@@ -51,7 +51,7 @@ class _SignUpState extends State<SignUp> {
                       child: Text(
                         'Login',
                         style: TextStyle(
-                          fontSize: 35.sp,
+                          fontSize: 40.sp,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
@@ -149,7 +149,7 @@ class _SignUpState extends State<SignUp> {
                       filled: true,
                       hintStyle:
                           const TextStyle(fontSize: 20, color: Colors.grey),
-                      hintText: "Password",
+                      hintText: " Confirm Password",
                       fillColor: Colors.white70)),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -192,6 +192,9 @@ class _SignUpState extends State<SignUp> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                     color: const Color(0xff3071E7),
+                    border: Border.all(
+                      color: Colors.blue,
+                    ),
                     borderRadius: BorderRadius.circular(25)),
                 child: TextButton(
                   onPressed: () {},

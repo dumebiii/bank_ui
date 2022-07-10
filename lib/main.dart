@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(720, 1600),
       builder: () => MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/bankHome',
+        initialRoute: '/signUp',
         routes: {
           'launch': (context) => const Launch(),
           '/login': (context) => const LoginScreen(),
